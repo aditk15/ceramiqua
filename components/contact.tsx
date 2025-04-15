@@ -30,32 +30,33 @@ export default function Contact() {
           Contact
         </motion.h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-          <motion.form
-            className="space-y-6"
-            onSubmit={(e) => e.preventDefault()}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+          <motion.div
+            className="flex flex-col"
             initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <div>
-              <Input type="text" placeholder="Name" className="bg-white border-0 h-12" />
-            </div>
-            <div>
-              <Input type="email" placeholder="Email" className="bg-white border-0 h-12" />
-            </div>
-            <div>
-              <Textarea placeholder="Message" className="bg-white border-0 min-h-[150px]" />
-            </div>
-            <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-            <Button
-              type="submit"
-              className="bg-[#c4a47a] hover:bg-[#b3936a] text-white rounded-none px-8 py-6 h-auto"
-            >
-              Send Message
-            </Button>
-            </motion.div>
-          </motion.form>
+            <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+              <div>
+                <Input type="text" placeholder="Name" className="bg-white border-0 h-12" />
+              </div>
+              <div>
+                <Input type="email" placeholder="Email" className="bg-white border-0 h-12" />
+              </div>
+              <div>
+                <Textarea placeholder="Message" className="bg-white border-0 min-h-[150px]" />
+              </div>
+              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+                <Button
+                  type="submit"
+                  className="bg-[#c4a47a] hover:bg-[#b3936a] text-white rounded-none px-8 py-6 h-auto"
+                >
+                  Send Message
+                </Button>
+              </motion.div>
+            </form>
+          </motion.div>
 
           <motion.div
             initial={{ opacity: 0, x: 30 }}
@@ -76,7 +77,7 @@ export default function Contact() {
               <div>
                 <h3 className="font-serif text-xl mb-2 text-[#2c2c2c]">Contact Information</h3>
                 <p className="text-[#444444]">
-                sandeep@theceramiqua.com
+                  sandeep@theceramiqua.com
                   <br />
                   +91 94250 81343
                 </p>
@@ -117,6 +118,27 @@ export default function Contact() {
             </div>
           </motion.div>
         </div>
+        
+        {/* Full-width map section */}
+        <motion.div 
+          className="mt-16"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+        >
+          <h3 className="font-serif text-2xl mb-4 text-[#2c2c2c] text-center">Our Location</h3>
+          <div className="w-full h-[350px] overflow-hidden">
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3679.774598563501!2d75.89979417517937!3d22.736617779375212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3962e2b4f2cca3a5%3A0x39830183a0be16d8!2sThe%20Ceramiqua%3A%20Tiles%2C!5e0!3m2!1sen!2sin!4v1744733907367!5m2!1sen!2sin" 
+              width="100%" 
+              height="100%" 
+              style={{ border: 0 }} 
+              allowFullScreen={false} 
+              loading="lazy" 
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </motion.div>
       </div>
     </motion.section>
   )

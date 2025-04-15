@@ -14,7 +14,7 @@ export default function DesignPhilosophy() {
         <div
           className="h-full w-full bg-cover bg-fixed bg-center"
           style={{
-            backgroundImage: "url('/placeholder.svg?height=1080&width=1920')",
+            backgroundImage: "url('/designphilo.jpg?height=1080&width=1920')",
           }}
         >
           <div className="absolute inset-0 bg-black/40" />

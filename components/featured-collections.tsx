@@ -6,19 +6,19 @@ import { useInView } from "framer-motion"
 
 const collections = [
   {
-    title: "Sienna Series",
-    description: "Earth-inspired matte",
-    image: "/placeholder.svg?height=600&width=800",
+    title: "Tiles",
+    description: "Chic Designs from Around the World",
+    image: "/tiles.jpg?height=600&width=800",
   },
   {
-    title: "Lustre Collection",
-    description: "Glossy marbled surfaces",
-    image: "/placeholder.svg?height=600&width=800",
+    title: "Bathwares",
+    description: "All About Bathroom Wellness",
+    image: "/bathwares.jpeg?height=600&width=800",
   },
   {
-    title: "Urban Stone",
-    description: "Minimalist concrete tones",
-    image: "/placeholder.svg?height=600&width=800",
+    title: "Stretch Ceilings",
+    description: "To Brighten Up Your Living Spaces",
+    image: "/stretchceiling.jpeg?height=600&width=800",
   },
   {
     title: "Coastal Palette",
@@ -45,7 +45,7 @@ export default function FeaturedCollections() {
         animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
         transition={{ duration: 0.6 }}
       >
-        Featured Collections
+        Our Offerings
       </motion.h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {collections.map((collection, index) => (
