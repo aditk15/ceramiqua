@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'Jost';
+  src: url('/fonts/Jost.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --background: 39 22% 93%; /* #f3f0eb */
+    --foreground: 0 0% 17%; /* #2c2c2c */
+
+    --card: 39 22% 93%;
+    --card-foreground: 0 0% 17%;
+
+    --popover: 39 22% 93%;
+    --popover-foreground: 0 0% 17%;
+
+    --primary: 35 36% 62%; /* #c4a47a */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 39 22% 93%;
+    --secondary-foreground: 0 0% 17%;
+
+    --muted: 39 15% 87%; /* #eae6df */
+    --muted-foreground: 0 0% 40%;
+
+    --accent: 35 36% 62%; /* #c4a47a */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 39 15% 87%;
+    --input: 39 15% 87%;
+    --ring: 35 36% 62%;
+
+    --radius: 0.5rem;
+
+    --font-sans: "Jost", Helvetica, Arial, sans-serif;
+    --font-serif: "Jost", Helvetica, Arial, sans-serif;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html,
+  body {
+    font-family: var(--font-sans);
+    @apply bg-background text-foreground;
+  }
+
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(-33.333%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-right {
+  animation: scrollRight 30s linear infinite;
+}
+
+.animate-scroll-left {
+  animation: scrollLeft 30s linear infinite;
+}
+
+/* Hover pause for desktop */
+@media (min-width: 1024px) {
+  .animate-scroll-right:hover,
+  .animate-scroll-left:hover {
+    animation-play-state: paused;
+  }
+}
