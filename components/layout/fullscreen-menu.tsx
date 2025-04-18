@@ -113,16 +113,16 @@ const menuImageSets = {
   // Default images when no menu item is hovered
   default: {
     upward: [
-      "/sc1.jpg?height=600&width=400",
-      "/sc2.jpg?height=600&width=400",
-      "/sc3.jpg?height=600&width=400",
-      "/sc4.jpg?height=600&width=400",
+      "/sc1.webp?height=600&width=400",
+      "/sc2.webp?height=600&width=400",
+      "/sc3.webp?height=600&width=400",
+      "/sc4.webp?height=600&width=400",
     ],
     downward: [
-      "/sc5.jpg?height=600&width=400",
-      "/sc6.jpg?height=600&width=400",
-      "/sc7.jpg?height=600&width=400",
-      "/sc8.jpg?height=600&width=400",
+      "/sc5.webp?height=600&width=400",
+      "/sc6.webp?height=600&width=400",
+      "/sc7.webp?height=600&width=400",
+      "/sc8.webp?height=600&width=400",
     ]
   }
 };

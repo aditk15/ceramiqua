@@ -8,12 +8,12 @@ const collections = [
   {
     title: "Tiles",
     description: "Chic Designs from Around the World",
-    image: "/tiles.jpg?height=600&width=800",
+    image: "/tiles.webp?height=600&width=800",
   },
   {
     title: "Bathwares",
     description: "Essential Fixtures for Everyday Comfort",
-    image: "/bathwares.jpeg?height=600&width=800",
+    image: "/bathwares.webp?height=600&width=800",
   },
   {
     title: "Tubs & Jacuzzis",
@@ -23,7 +23,7 @@ const collections = [
   {
     title: "Stretch Ceilings",
     description: "To Brighten Up Your Living Spaces",
-    image: "/stretchceiling.jpeg?height=600&width=800",
+    image: "/stretchceiling.webp?height=600&width=800",
   },
 ]
 
