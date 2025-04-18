@@ -4,7 +4,7 @@ import "./globals.css"
 import Header from "@/components/layout/header"
 import { ThemeProvider } from "@/components/theme-provider"
 import localFont from 'next/font/local'
-
+import Script from 'next/script'
 
 export const metadata: Metadata = {
   title: "The Ceramiqua | Tiles & Bathwares",
@@ -30,7 +30,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${jost.variable} font-sans bg-[#f3f0eb]`}>
+      <head>
+        <Script id="preload-bg" strategy="beforeInteractive">
+          {`
+            const link = document.createElement('link');
+            link.rel = 'preload';
+            link.href = '/bg.jpg';
+            link.as = 'image';
+            document.head.appendChild(link);
+          `}
+        </Script>
+      </head>
+      <body className={`${jost.variable} font-sans bg-[#f3f0eb]`} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <Header />
           {children}

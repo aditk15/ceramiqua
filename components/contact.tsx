@@ -139,6 +139,23 @@ export default function Contact() {
             />
           </div>
         </motion.div>
+        <motion.div
+          className="mt-8 text-center text-sm text-[#6b6b6b]"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 0.8 } : { opacity: 0 }}
+          transition={{ duration: 0.6, delay: 0.7 }}
+        >
+          ©2025 by The Ceramiqua.
+        </motion.div>
+
+        <motion.div
+          className="mt-8 text-center text-sm text-[#6b6b6b]"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 0.8 } : { opacity: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+        >
+          Made with <span className="text-[#c4a47a]">❤️</span> by Adit Khandelwal
+        </motion.div>
       </div>
     </motion.section>
   )
