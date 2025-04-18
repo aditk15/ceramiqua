@@ -154,7 +154,7 @@ export default function Contact() {
           animate={isInView ? { opacity: 0.8 } : { opacity: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          Made with <span className="text-[#c4a47a]">❤️</span> by Adit Khandelwal
+          Designed and Developed by Adit Khandelwal
         </motion.div>
       </div>
     </motion.section>

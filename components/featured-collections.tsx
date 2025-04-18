@@ -12,18 +12,18 @@ const collections = [
   },
   {
     title: "Bathwares",
-    description: "All About Bathroom Wellness",
+    description: "Essential Fixtures for Everyday Comfort",
     image: "/bathwares.jpeg?height=600&width=800",
+  },
+  {
+    title: "Tubs & Jacuzzis",
+    description: "Soak in Style and Comfort",
+    image: "/tubs.webp?height=600&width=800",
   },
   {
     title: "Stretch Ceilings",
     description: "To Brighten Up Your Living Spaces",
     image: "/stretchceiling.jpeg?height=600&width=800",
-  },
-  {
-    title: "Coastal Palette",
-    description: "Ocean-inspired textures",
-    image: "/placeholder.svg?height=600&width=800",
   },
 ]
 

@@ -3,62 +3,75 @@
 import { useRef } from "react"
 import { motion } from "framer-motion"
 
-const phrases = ["Bathroom Spaces", "Wellness Zones", "Design Studio", "Showroom", "Collections"]
+const phrases = [
+  "Curated Spaces",
+  "Bathroom Spaces",
+  "Wellness Zones",
+  "Modern Luxe",
+  "Immersive Interiors",
+  "Curated Journeys",
+  "Crafted for You",
+  "Visual Storytelling",
+  "Stories in Stone",
+  "Your Design Destination",
+]
 
 export default function ScrollingText() {
   const containerRef = useRef<HTMLDivElement>(null)
 
-  // Duplicate phrases for seamless looping
-  const duplicatedPhrases = [...phrases, ...phrases, ...phrases]
+  // Duplicate phrases even more to prevent any seams
+  const duplicatedPhrases = [...phrases, ...phrases, ...phrases, ...phrases, ...phrases]
 
   return (
     <section className="relative overflow-hidden bg-[#101010] py-16">
-      {/* Top row - left to right */}
       <div className="relative overflow-hidden py-6">
-        <div className="animate-scroll-right flex whitespace-nowrap">
+        <div 
+          className="flex whitespace-nowrap"
+          style={{
+            animation: 'scroll-right 40s linear infinite',
+            willChange: 'transform'
+          }}
+        >
           {duplicatedPhrases.map((phrase, i) => (
-            <motion.span
+            <span
               key={`right-${i}`}
               className="text-4xl md:text-5xl lg:text-6xl font-sans text-white mx-8 inline-block"
-              whileHover={{ scale: 1.05 }}
-              animate={{ y: [0, -2, 0, 2, 0] }}
-              transition={{
-                y: {
-                  repeat: Number.POSITIVE_INFINITY,
-                  duration: 4,
-                  ease: "easeInOut",
-                },
-              }}
             >
               {phrase}
-            </motion.span>
+            </span>
           ))}
         </div>
       </div>
 
-      {/* Bottom row - right to left */}
       <div className="relative overflow-hidden py-6">
-        <div className="animate-scroll-left flex whitespace-nowrap">
+        <div 
+          className="flex whitespace-nowrap"
+          style={{
+            animation: 'scroll-left 40s linear infinite',
+            willChange: 'transform'
+          }}
+        >
           {duplicatedPhrases.map((phrase, i) => (
-            <motion.span
+            <span
               key={`left-${i}`}
               className="text-4xl md:text-5xl lg:text-6xl font-sans text-[#bfa77a] opacity-20 mx-8 inline-block"
-              whileHover={{ scale: 1.05 }}
-              animate={{ y: [0, 2, 0, -2, 0] }}
-              transition={{
-                y: {
-                  repeat: Number.POSITIVE_INFINITY,
-                  duration: 4,
-                  ease: "easeInOut",
-                  delay: (i * 0.1) % 0.5,
-                },
-              }}
             >
               {phrase}
-            </motion.span>
+            </span>
           ))}
         </div>
       </div>
+
+      <style jsx>{`
+        @keyframes scroll-left {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+        @keyframes scroll-right {
+          0% { transform: translateX(-50%); }
+          100% { transform: translateX(0); }
+        }
+      `}</style>
     </section>
   )
 }
