@@ -9,7 +9,11 @@ import Script from 'next/script'
 export const metadata: Metadata = {
   title: "The Ceramiqua | Tiles & Bathwares",
   description: "Tiles, Baths & Beyond",
-  generator: 'Adit Khandelwal'
+  generator: 'Adit Khandelwal',
+  icons: {
+    icon: '/logo.ico',
+    apple: '/applelogo.png',
+  },
 }
 
 const jost = localFont({
