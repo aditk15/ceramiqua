@@ -129,12 +129,12 @@ const menuImageSets = {
 
 const menuItems = [
   { label: "Home", href: "/", id: "home" },
-  { label: "Tiles", href: "/tiles", id: "tiles" },
-  { label: "Bathwares", href: "/bathwares", id: "bathwares" },
-  { label: "Tubs & Jacuzzis", href: "/tubs", id: "tubs" },
-  { label: "Stretch Ceilings", href: "/stretchceilings", id: "ceilings" },
-  { label: "Showroom", href: "/showroom", id: "showroom" },
-  { label: "Contact", href: "/contact", id: "contact" },
+  { label: "Tiles", href: "/", id: "tiles" },
+  { label: "Bathwares", href: "/", id: "bathwares" },
+  { label: "Tubs & Jacuzzis", href: "/", id: "tubs" },
+  { label: "Stretch Ceilings", href: "/", id: "ceilings" },
+  { label: "Showroom", href: "/", id: "showroom" },
+  { label: "Contact", href: "/", id: "contact" },
 ]
 
 export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps) {
