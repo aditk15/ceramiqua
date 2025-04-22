@@ -3,9 +3,9 @@ import type { Config } from "tailwindcss"
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './components/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{ts,tsx}",
     "*.{js,ts,jsx,tsx,mdx}",
   ],
@@ -13,8 +13,18 @@ const config = {
   theme: {
     container: {
       center: true,
-      padding: "2rem",
+      padding: {
+        DEFAULT: "1rem",
+        sm: "2rem",
+        lg: "4rem",
+        xl: "5rem",
+        "2xl": "6rem",
+      },
       screens: {
+        sm: "640px",
+        md: "768px",
+        lg: "1024px",
+        xl: "1280px",
         "2xl": "1400px",
       },
     },
@@ -92,6 +102,10 @@ const config = {
           "0%": { transform: "translateX(-33.333%)" },
           "100%": { transform: "translateX(0)" },
         },
+        galleryScroll: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -102,11 +116,17 @@ const config = {
         "scroll-down": "scrollDown 35s linear infinite",
         "scroll-right": "scrollRight 30s linear infinite",
         "scroll-left": "scrollLeft 30s linear infinite",
+        "gallery-scroll": "galleryScroll 30s linear infinite",
         pause: "none",
       },
       fontFamily: {
-        sans: ['Jost', 'Helvetica', 'Arial', 'sans-serif'],
-        serif: ['Jost', 'Helvetica', 'Arial', 'sans-serif'],
+        sans: ["Jost", "Helvetica", "Arial", "sans-serif"],
+        serif: ["Jost", "Helvetica", "Arial", "sans-serif"],
+      },
+      screens: {
+        xs: "375px",
+        "3xl": "1600px",
+        "4xl": "1920px",
       },
     },
   },

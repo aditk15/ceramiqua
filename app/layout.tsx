@@ -3,28 +3,29 @@ import type { Metadata } from "next"
 import "./globals.css"
 import Header from "@/components/layout/header"
 import { ThemeProvider } from "@/components/theme-provider"
-import localFont from 'next/font/local'
-import Script from 'next/script'
+import localFont from "next/font/local"
+import Script from "next/script"
 
 export const metadata: Metadata = {
   title: "The Ceramiqua | Tiles & Bathwares",
   description: "Tiles, Baths & Beyond",
-  generator: 'Adit Khandelwal',
+  generator: "Adit Khandelwal",
   icons: {
-    icon: '/logo.ico',
-    apple: '/applelogo.png',
+    icon: "/logo.ico",
+    apple: "/applelogo.png",
   },
+  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
 }
 
 const jost = localFont({
   src: [
     {
-      path: '../styles/Jost/Jost.ttf',
-      weight: '300',
-      style: 'normal',
-    }
+      path: "../styles/Jost/Jost.ttf",
+      weight: "300",
+      style: "normal",
+    },
   ],
-  variable: '--font-jost',
+  variable: "--font-jost",
 })
 
 export default function RootLayout({

@@ -45,7 +45,9 @@
     --font-sans: "Jost", Helvetica, Arial, sans-serif;
     --font-serif: "Jost", Helvetica, Arial, sans-serif;
   }
+}
 
+@layer base {
   * {
     @apply border-border;
   }
@@ -92,5 +94,68 @@
   .animate-scroll-right:hover,
   .animate-scroll-left:hover {
     animation-play-state: paused;
+  }
+}
+
+/* Hide scrollbars but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
+
+/* Gallery auto-scroll animation */
+@keyframes galleryScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.gallery-scroll {
+  animation: galleryScroll 30s linear infinite;
+}
+
+.gallery-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* Image hover effects */
+.gallery-image {
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gallery-image:hover {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Responsive typography */
+@media (max-width: 640px) {
+  h1 {
+    font-size: clamp(2rem, 8vw, 3rem);
+  }
+  h2 {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+  p {
+    font-size: clamp(0.875rem, 4vw, 1rem);
+  }
+}
+
+/* Improved mobile touch interactions */
+@media (max-width: 768px) {
+  .touch-scroll {
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+
+  .touch-scroll > * {
+    scroll-snap-align: start;
   }
 }

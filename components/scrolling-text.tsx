@@ -1,7 +1,6 @@
 "use client"
 
 import { useRef } from "react"
-import { motion } from "framer-motion"
 
 const phrases = [
   "Wellness Zones",
@@ -18,16 +17,31 @@ const phrases = [
 export default function ScrollingText() {
   const containerRef = useRef<HTMLDivElement>(null)
 
-  const duplicatedPhrases = [...phrases, ...phrases, ...phrases, ...phrases, ...phrases, ...phrases, ...phrases, ...phrases, ...phrases, ...phrases, ...phrases, ...phrases, ...phrases, ...phrases]
+  const duplicatedPhrases = [
+    ...phrases,
+    ...phrases,
+    ...phrases,
+    ...phrases,
+    ...phrases,
+    ...phrases,
+    ...phrases,
+    ...phrases,
+    ...phrases,
+    ...phrases,
+    ...phrases,
+    ...phrases,
+    ...phrases,
+    ...phrases,
+  ]
 
   return (
     <section className="relative overflow-hidden bg-[#101010] py-16">
       <div className="relative overflow-hidden py-6">
-        <div 
+        <div
           className="flex whitespace-nowrap"
           style={{
-            animation: 'scroll-right 40s linear infinite',
-            willChange: 'transform'
+            animation: "scroll-right 40s linear infinite",
+            willChange: "transform",
           }}
         >
           {duplicatedPhrases.map((phrase, i) => (
@@ -42,11 +56,11 @@ export default function ScrollingText() {
       </div>
 
       <div className="relative overflow-hidden py-6">
-        <div 
+        <div
           className="flex whitespace-nowrap"
           style={{
-            animation: 'scroll-left 40s linear infinite',
-            willChange: 'transform'
+            animation: "scroll-left 40s linear infinite",
+            willChange: "transform",
           }}
         >
           {duplicatedPhrases.map((phrase, i) => (
