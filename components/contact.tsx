@@ -11,32 +11,15 @@ import { Instagram, Facebook } from "lucide-react"
 export default function Contact() {
   const sectionRef = useRef<HTMLElement>(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
-
   return (
-    <motion.section
-      ref={sectionRef}
-      className="py-24 px-6 md:px-12 bg-[#eae6df]"
-      initial={{ opacity: 0 }}
-      animate={isInView ? { opacity: 1 } : { opacity: 0 }}
-      transition={{ duration: 0.8 }}
-    >
+    <section className="py-24 px-6 md:px-12 bg-[#eae6df]">
       <div className="max-w-7xl mx-auto">
-        <motion.h2
-          className="font-serif text-3xl md:text-4xl text-center mb-16 text-[#2c2c2c]"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6 }}
-        >
+        <h2 className="font-serif text-3xl md:text-4xl text-center mb-16 text-[#2c2c2c]">
           Contact
-        </motion.h2>
+        </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
-          <motion.div
-            className="flex flex-col"
-            initial={{ opacity: 0, x: -30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -30 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
+          <div className="flex flex-col">
             <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
               <div>
                 <Input type="text" placeholder="Name" className="bg-white border-0 h-12" />
@@ -47,22 +30,18 @@ export default function Contact() {
               <div>
                 <Textarea placeholder="Message" className="bg-white border-0 min-h-[150px]" />
               </div>
-              <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
+              <div>
                 <Button
                   type="submit"
                   className="bg-[#c4a47a] hover:bg-[#b3936a] text-white rounded-none px-8 py-6 h-auto"
                 >
                   Send Message
                 </Button>
-              </motion.div>
+              </div>
             </form>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 30 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
+          <div>
             <div className="space-y-8">
               <div>
                 <h3 className="font-serif text-xl mb-2 text-[#2c2c2c]">Visit Our Showroom</h3>
@@ -95,37 +74,27 @@ export default function Contact() {
               <div>
                 <h3 className="font-serif text-xl mb-2 text-[#2c2c2c]">Follow Us</h3>
                 <div className="flex space-x-4">
-                  <motion.a
+                  <a
                     href="https://www.instagram.com/theceramiqua/#"
                     className="text-[#2c2c2c] hover:text-[#c4a47a] transition-colors"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
                   >
                     <Instagram className="h-5 w-5" />
                     <span className="sr-only">Instagram</span>
-                  </motion.a>
-                  <motion.a
+                  </a>
+                  <a
                     href="https://www.facebook.com/theceramiqua/"
                     className="text-[#2c2c2c] hover:text-[#c4a47a] transition-colors"
-                    whileHover={{ scale: 1.1 }}
-                    whileTap={{ scale: 0.95 }}
                   >
                     <Facebook className="h-5 w-5" />
                     <span className="sr-only">Facebook</span>
-                  </motion.a>
+                  </a>
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         </div>
         
-        {/* Full-width map section */}
-        <motion.div 
-          className="mt-16"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
-          transition={{ duration: 0.6, delay: 0.6 }}
-        >
+        <div className="mt-16">
           <h3 className="font-serif text-2xl mb-4 text-[#2c2c2c] text-center">Our Location</h3>
           <div className="w-full h-[350px] overflow-hidden">
             <iframe 
@@ -138,25 +107,15 @@ export default function Contact() {
               referrerPolicy="no-referrer-when-downgrade"
             />
           </div>
-        </motion.div>
-        <motion.div
-          className="mt-8 text-center text-sm text-[#6b6b6b]"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 0.8 } : { opacity: 0 }}
-          transition={{ duration: 0.6, delay: 0.7 }}
-        >
+        </div>
+        <div className="mt-8 text-center text-sm text-[#6b6b6b] opacity-80">
           ©2025 by The Ceramiqua.
-        </motion.div>
+        </div>
 
-        <motion.div
-          className="mt-8 text-center text-sm text-[#6b6b6b]"
-          initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 0.8 } : { opacity: 0 }}
-          transition={{ duration: 0.6, delay: 0.8 }}
-        >
+        <div className="mt-8 text-center text-sm text-[#6b6b6b] opacity-80">
           Designed and Developed by Adit Khandelwal
-        </motion.div>
+        </div>
       </div>
-    </motion.section>
+    </section>
   )
 }

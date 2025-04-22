@@ -129,11 +129,11 @@ const menuImageSets = {
 
 const menuItems = [
   { label: "Home", href: "/", id: "home" },
-  { label: "Collections", href: "/collections", id: "collections" },
-  { label: "Bathroom Spaces", href: "/bathroom-spaces", id: "bathroom" },
-  { label: "Wellness", href: "/wellness", id: "wellness" },
+  { label: "Tiles", href: "/tiles", id: "tiles" },
+  { label: "Bathwares", href: "/bathwares", id: "bathwares" },
+  { label: "Tubs & Jacuzzis", href: "/tubs", id: "tubs" },
+  { label: "Stretch Ceilings", href: "/stretchceilings", id: "ceilings" },
   { label: "Showroom", href: "/showroom", id: "showroom" },
-  { label: "Design Studio", href: "/design-studio", id: "design" },
   { label: "Contact", href: "/contact", id: "contact" },
 ]
 

@@ -1,7 +1,5 @@
 "use client"
 
-import { useState } from "react"
-
 interface ScrollingImagesProps {
   upwardImages: string[];
   downwardImages: string[];
@@ -21,46 +19,33 @@ export default function ScrollingImages({
     "/sc8.webp?height=600&width=400",
   ] 
 }: ScrollingImagesProps) {
-  const [hoveredColumn, setHoveredColumn] = useState<"left" | "right" | null>(null)
-
   return (
     <div className="flex w-full h-full overflow-hidden">
-      <div
-        className="w-1/2 relative overflow-hidden"
-        onMouseEnter={() => setHoveredColumn("left")}
-        onMouseLeave={() => setHoveredColumn(null)}
-      >
-        <div className={`flex flex-col ${hoveredColumn === "left" ? "animate-pause" : "animate-scroll-up"}`}>
+      <div className="w-1/2 relative overflow-hidden">
+        <div className="flex flex-col animate-scroll-up">
           {[...upwardImages, ...upwardImages, ...upwardImages].map((src, index) => (
             <div
               key={`up-${index}`}
-              className="relative w-full h-[300px] p-2 transition-opacity duration-700 opacity-100"
+              className="relative w-full h-[300px] p-2"
             >
               <div
-                className={`w-full h-full bg-cover bg-center transition-all duration-500 ${
-                  hoveredColumn === "left" ? "scale-105 brightness-110" : ""
-                }`}
+                className="w-full h-full bg-cover bg-center"
                 style={{ backgroundImage: `url(${src})` }}
               />
             </div>
           ))}
         </div>
       </div>
-      <div
-        className="w-1/2 relative overflow-hidden"
-        onMouseEnter={() => setHoveredColumn("right")}
-        onMouseLeave={() => setHoveredColumn(null)}
-      >
-        <div className={`flex flex-col ${hoveredColumn === "right" ? "animate-pause" : "animate-scroll-down"}`}>
+
+      <div className="w-1/2 relative overflow-hidden">
+        <div className="flex flex-col animate-scroll-down">
           {[...downwardImages, ...downwardImages, ...downwardImages].map((src, index) => (
             <div
               key={`down-${index}`}
-              className="relative w-full h-[300px] p-2 transition-opacity duration-700 opacity-100"
+              className="relative w-full h-[300px] p-2"
             >
               <div
-                className={`w-full h-full bg-cover bg-center transition-all duration-500 ${
-                  hoveredColumn === "right" ? "scale-105 brightness-110" : ""
-                }`}
+                className="w-full h-full bg-cover bg-center"
                 style={{ backgroundImage: `url(${src})` }}
               />
             </div>

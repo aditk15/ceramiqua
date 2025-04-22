@@ -4,23 +4,21 @@ import { useRef } from "react"
 import { motion } from "framer-motion"
 
 const phrases = [
-  "Curated Spaces",
-  "Bathroom Spaces",
   "Wellness Zones",
-  "Modern Luxe",
+  "Bathroom Furnitures",
+  "Wall Coverings",
+  "Luxury Tiles",
   "Immersive Interiors",
-  "Curated Journeys",
-  "Crafted for You",
+  "Curated Products",
   "Visual Storytelling",
-  "Stories in Stone",
+  "Home Decor Boutique",
   "Your Design Destination",
 ]
 
 export default function ScrollingText() {
   const containerRef = useRef<HTMLDivElement>(null)
 
-  // Duplicate phrases even more to prevent any seams
-  const duplicatedPhrases = [...phrases, ...phrases, ...phrases, ...phrases, ...phrases]
+  const duplicatedPhrases = [...phrases, ...phrases, ...phrases, ...phrases, ...phrases, ...phrases, ...phrases, ...phrases, ...phrases, ...phrases, ...phrases, ...phrases, ...phrases, ...phrases]
 
   return (
     <section className="relative overflow-hidden bg-[#101010] py-16">
