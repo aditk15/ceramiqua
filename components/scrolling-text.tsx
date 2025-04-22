@@ -40,7 +40,7 @@ export default function ScrollingText() {
         <div
           className="flex whitespace-nowrap"
           style={{
-            animation: "scroll-right 40s linear infinite",
+            animation: "scroll-right 30s linear infinite",
             willChange: "transform",
           }}
         >
@@ -59,7 +59,7 @@ export default function ScrollingText() {
         <div
           className="flex whitespace-nowrap"
           style={{
-            animation: "scroll-left 40s linear infinite",
+            animation: "scroll-left 30s linear infinite",
             willChange: "transform",
           }}
         >
