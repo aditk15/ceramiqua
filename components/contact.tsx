@@ -48,7 +48,7 @@ export default function Contact() {
                 <p className="text-[#444444] text-sm sm:text-base">
                   ED/110, Ring Road, Sector D, Opposite Khajrana Square, Scheme 94,
                   <br />
-                  Indore, Madhya Pradesh, India
+                  Indore, Madhya Pradesh, India (452010)
                 </p>
               </div>
 
@@ -64,7 +64,7 @@ export default function Contact() {
               <div>
                 <h3 className="font-serif text-lg sm:text-xl mb-2 text-[#2c2c2c]">Opening Hours</h3>
                 <p className="text-[#444444] text-sm sm:text-base">
-                  Monday - Saturday: 10am - 6pm
+                  Monday - Saturday: 10am - 8pm
                   <br />
                   Sunday: By appointment only
                 </p>
