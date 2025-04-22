@@ -110,7 +110,6 @@ const menuImageSets = {
       "/contact-8.jpg?height=600&width=400",
     ]
   },
-  // Default images when no menu item is hovered
   default: {
     upward: [
       "/sc1.webp?height=600&width=400",
@@ -205,7 +204,7 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
             >
               <Link 
                 href={item.href}
-                className={`block font-serif text-4xl md:text-5xl transition-colors duration-300 ${
+                className={`block font-serif text-4xl md:text-4xl transition-colors duration-300 ${
                   activeMenuItem === item.id ? 'text-[#c4a47a]' : 'text-[#2c2c2c]'
                 } hover:text-[#c4a47a]`}
                 onClick={onClose}
