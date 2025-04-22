@@ -6,6 +6,12 @@ import { ThemeProvider } from "@/components/theme-provider"
 import localFont from "next/font/local"
 import Script from "next/script"
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+}
+
 export const metadata: Metadata = {
   title: "The Ceramiqua | Tiles & Bathwares",
   description: "Tiles, Baths & Beyond",
@@ -14,7 +20,6 @@ export const metadata: Metadata = {
     icon: "/logo.ico",
     apple: "/applelogo.png",
   },
-  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
 }
 
 const jost = localFont({
