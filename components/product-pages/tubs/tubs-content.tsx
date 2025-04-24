@@ -7,72 +7,74 @@ import Image from "next/image"
 
 const slides = [
   {
-    type: "video",
-    src: "/tubs-video.mp4",
-    alt: "Luxury tubs and jacuzzis showcase",
-  },
-  {
     type: "image",
-    src: "/tubs-1.webp",
+    src: "/tubs/tubs-1.png",
     alt: "Designer bathtub",
   },
   {
     type: "image",
-    src: "/tubs-2.webp",
+    src: "/tubs/tubs-2.png",
     alt: "Modern jacuzzi",
   },
   {
     type: "image",
-    src: "/tubs-3.webp",
+    src: "/tubs/tubs-3.png",
     alt: "Premium spa bath",
   },
+  {
+    type: "image",
+    src: "/tubs/tubs-4.png",
+    alt: "Luxury freestanding tub",
+  }
 ]
 
 const features = [
   {
-    title: "Freestanding Tubs",
-    description: "Elegant centerpieces that transform your bathroom into a luxurious retreat",
+    title: "Smart Hydrotherapy",
+    description: "Integrated temperature control, automatic water level sensors, and full HD smart displays enhance your soak.",
+    icon: "", // Add relevant icons if needed
+  },
+  {
+    title: "Sensory Wellness",
+    description: "Bluetooth audio, underwater mood lighting, and ambient color rings create a serene escape.",
     icon: "",
   },
   {
-    title: "Whirlpool Jacuzzis",
-    description: "Experience the ultimate relaxation with therapeutic water jets",
+    title: "Effortless Hygiene",
+    description: "Ozone sterilization, UV nozzle cleaning, and antibacterial surfaces ensure a clean and safe bathing experience.",
     icon: "",
   },
   {
-    title: "Air Bath Systems",
-    description: "Gentle bubbles provide a soothing, effervescent massage",
-    icon: "",
-  },
-  {
-    title: "Smart Controls",
-    description: "Modern technology for personalized bathing experiences",
+    title: "Modular Controls",
+    description: "Touch-sensitive interfaces with customizable programs let you tune your bath the way you want.",
     icon: "",
   },
 ]
 
+
 const products = [
   {
-    name: "Freestanding Tubs",
-    image: "/tubs-freestanding.webp",
-    description: "Elegant centerpieces for your bathroom",
+    name: "Wellness Tubs",
+    image: "/tubs/tubs-cascade.png",
+    description: "Sleek forms with cascading waterfalls and smart display tech for an immersive spa-like feel.",
   },
   {
-    name: "Whirlpool Jacuzzis",
-    image: "/tubs-whirlpool.webp",
-    description: "Therapeutic relaxation with water jets",
+    name: "Integrated Bathing Systems",
+    image: "/tubs/tubs-integrated.jpg",  
+    description: "Stylish bathtubs with built-in basins, storage, and customizable faucets—perfect for compact and luxury settings alike.",
+  },  
+  {
+    name: "Luxury Freestanding Baths",
+    image: "/tubs/tubs-freestanding.png",
+    description: "Artfully sculpted with ergonomic comfort and tactile elegance in surfex and fineceramic finishes.",
   },
   {
-    name: "Corner Tubs",
-    image: "/tubs-corner.webp",
-    description: "Space-efficient designs for any bathroom",
-  },
-  {
-    name: "Luxury Spa Baths",
-    image: "/tubs-spa.webp",
-    description: "Complete wellness experience at home",
+    name: "Compact Designer Tubs",
+    image: "/tubs/tubs-compact.png",
+    description: "Ideal for urban homes, these space-efficient units don’t compromise on performance or style.",
   },
 ]
+
 
 export default function TubsContent() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -88,14 +90,6 @@ export default function TubsContent() {
 
     return () => clearInterval(interval)
   }, [])
-
-  // Handle video playback when it becomes active
-  useEffect(() => {
-    if (slides[currentSlide].type === "video" && videoRef.current) {
-      videoRef.current.currentTime = 0
-      videoRef.current.play().catch((err) => console.error("Video play error:", err))
-    }
-  }, [currentSlide])
 
   return (
     <>
@@ -148,23 +142,7 @@ export default function TubsContent() {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <AnimatePresence mode="wait">
-                {slides[currentSlide].type === "video" ? (
-                  <motion.video
-                    key={`video-${currentSlide}`}
-                    ref={videoRef}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
-                    muted
-                    playsInline
-                    loop
-                  >
-                    <source src={slides[currentSlide].src} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </motion.video>
-                ) : (
+                
                   <motion.div
                     key={`image-${currentSlide}`}
                     className="absolute inset-0"
@@ -181,7 +159,6 @@ export default function TubsContent() {
                       sizes="(max-width: 1024px) 100vw, 58vw"
                     />
                   </motion.div>
-                )}
               </AnimatePresence>
 
               {/* Slide indicators */}

@@ -8,7 +8,7 @@ export default function TubsHero() {
     <section className="relative h-[100vh] w-full overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/tubs-hero.webp"
+          src="/tubs/tubs-hero.jpg"
           alt="Luxury Tubs & Jacuzzis"
           fill
           priority
