@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import { Menu } from "lucide-react"
 import { cn } from "@/lib/utils"
-import FullscreenMenu from "./fullscreen-menu"
+import FullscreenMenu from "../layout/fullscreen-menu"
 import Image from "next/image"
 
 export default function Header() {

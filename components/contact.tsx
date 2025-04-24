@@ -3,96 +3,102 @@
 import { useRef } from "react"
 import { useInView } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Instagram, Facebook } from "lucide-react"
+import { Instagram, Facebook, MessageSquare } from "lucide-react"
 
 export default function Contact() {
   const sectionRef = useRef<HTMLElement>(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 })
 
   return (
-    <section ref={sectionRef} className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 bg-[#eae6df]">
+    <section id="contact" ref={sectionRef} className="py-16 sm:py-20 md:py-24 px-4 sm:px-6 md:px-12 bg-[#eae6df]">
       <div className="max-w-7xl mx-auto">
         <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-center mb-8 sm:mb-12 md:mb-16 text-[#2c2c2c]">
           Contact
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-12 md:mb-16">
-          <div className="flex flex-col">
-            <form className="space-y-4 sm:space-y-6" onSubmit={(e) => e.preventDefault()}>
-              <div>
-                <Input type="text" placeholder="Name" className="bg-white border-0 h-10 sm:h-12" />
-              </div>
-              <div>
-                <Input type="email" placeholder="Email" className="bg-white border-0 h-10 sm:h-12" />
-              </div>
-              <div>
-                <Textarea placeholder="Message" className="bg-white border-0 min-h-[120px] sm:min-h-[150px]" />
-              </div>
-              <div>
-                <Button
-                  type="submit"
-                  className="bg-[#c4a47a] hover:bg-[#b3936a] text-white rounded-none px-6 sm:px-8 py-4 sm:py-6 h-auto w-full sm:w-auto"
+          <div className="flex flex-col space-y-8">
+            <div>
+              <h3 className="font-serif text-lg sm:text-xl mb-2 text-[#2c2c2c]">Visit Our Showroom</h3>
+              <p className="text-[#444444] text-sm sm:text-base">
+                ED/110, Ring Road, Sector D, Opposite Khajrana Square, Scheme 94,
+                <br />
+                Indore, Madhya Pradesh, India (452010)
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-serif text-lg sm:text-xl mb-2 text-[#2c2c2c]">Contact Information</h3>
+              <p className="text-[#444444] text-sm sm:text-base">
+                sandeep@theceramiqua.com
+                <br />
+                +91 94250 81343
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-serif text-lg sm:text-xl mb-2 text-[#2c2c2c]">Opening Hours</h3>
+              <p className="text-[#444444] text-sm sm:text-base">
+                Monday - Saturday: 10am - 8pm
+                <br />
+                Sunday: By appointment only
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-serif text-lg sm:text-xl mb-2 text-[#2c2c2c]">Follow Us</h3>
+              <div className="flex space-x-4">
+                <a
+                  href="https://www.instagram.com/theceramiqua/#"
+                  className="text-[#2c2c2c] hover:text-[#c4a47a] transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
                 >
-                  Send Message
-                </Button>
+                  <Instagram className="h-5 w-5" />
+                  <span className="sr-only">Instagram</span>
+                </a>
+                <a
+                  href="https://www.facebook.com/theceramiqua/"
+                  className="text-[#2c2c2c] hover:text-[#c4a47a] transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Facebook className="h-5 w-5" />
+                  <span className="sr-only">Facebook</span>
+                </a>
               </div>
-            </form>
+            </div>
           </div>
 
-          <div>
-            <div className="space-y-6 sm:space-y-8">
-              <div>
-                <h3 className="font-serif text-lg sm:text-xl mb-2 text-[#2c2c2c]">Visit Our Showroom</h3>
-                <p className="text-[#444444] text-sm sm:text-base">
-                  ED/110, Ring Road, Sector D, Opposite Khajrana Square, Scheme 94,
-                  <br />
-                  Indore, Madhya Pradesh, India (452010)
-                </p>
-              </div>
+          <div className="flex flex-col space-y-8">
+            <div>
+              <h3 className="font-serif text-lg sm:text-xl mb-4 text-[#2c2c2c]">Get in Touch</h3>
+              <p className="text-[#444444] text-sm sm:text-base mb-6">
+                Have questions about our products or services? Contact us directly through WhatsApp for a quick
+                response.
+              </p>
+              <a
+                href="https://wa.me/919425081343"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-md px-6 py-3 transition-colors"
+              >
+                <MessageSquare className="h-5 w-5" />
+                Contact Us on WhatsApp
+              </a>
+            </div>
 
-              <div>
-                <h3 className="font-serif text-lg sm:text-xl mb-2 text-[#2c2c2c]">Contact Information</h3>
-                <p className="text-[#444444] text-sm sm:text-base">
-                  sandeep@theceramiqua.com
-                  <br />
-                  +91 94250 81343
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-serif text-lg sm:text-xl mb-2 text-[#2c2c2c]">Opening Hours</h3>
-                <p className="text-[#444444] text-sm sm:text-base">
-                  Monday - Saturday: 10am - 8pm
-                  <br />
-                  Sunday: By appointment only
-                </p>
-              </div>
-
-              <div>
-                <h3 className="font-serif text-lg sm:text-xl mb-2 text-[#2c2c2c]">Follow Us</h3>
-                <div className="flex space-x-4">
-                  <a
-                    href="https://www.instagram.com/theceramiqua/#"
-                    className="text-[#2c2c2c] hover:text-[#c4a47a] transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Instagram className="h-5 w-5" />
-                    <span className="sr-only">Instagram</span>
-                  </a>
-                  <a
-                    href="https://www.facebook.com/theceramiqua/"
-                    className="text-[#2c2c2c] hover:text-[#c4a47a] transition-colors"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Facebook className="h-5 w-5" />
-                    <span className="sr-only">Facebook</span>
-                  </a>
-                </div>
-              </div>
+            <div className="mt-8">
+              <h3 className="font-serif text-lg sm:text-xl mb-4 text-[#2c2c2c]">Request a Consultation</h3>
+              <p className="text-[#444444] text-sm sm:text-base mb-6">
+                Schedule a personalized consultation with our design experts to discuss your project requirements.
+              </p>
+              <Button
+                className="bg-[#c4a47a] hover:bg-[#b3936a] text-white rounded-none px-6 sm:px-8 py-4 sm:py-6 h-auto"
+                onClick={() => (window.location.href = "mailto:sandeep@theceramiqua.com?subject=Consultation Request")}
+              >
+                Request Consultation
+              </Button>
             </div>
           </div>
         </div>

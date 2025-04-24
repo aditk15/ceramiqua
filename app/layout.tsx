@@ -50,6 +50,13 @@ export default function RootLayout({
             document.head.appendChild(link);
           `}
         </Script>
+        <Script id="scroll-to-top" strategy="afterInteractive">
+          {`
+            if (typeof window !== 'undefined') {
+              window.scrollTo(0, 0);
+            }
+          `}
+        </Script>
       </head>
       <body className={`${jost.variable} font-sans bg-[#f3f0eb]`} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
