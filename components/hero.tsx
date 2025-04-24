@@ -7,7 +7,7 @@ export default function Hero() {
     <section className="relative flex h-[100svh] items-center justify-center overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/bg.webp"
+          src="/background/bg.webp"
           alt="The Ceramiqua background"
           fill
           priority
@@ -16,6 +16,18 @@ export default function Hero() {
         />
         <div className="absolute inset-0 bg-black/30" />
       </div>
+
+      {/* <div className="absolute inset-0">
+        <video
+          src="/bg.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="object-cover object-center w-full h-full"
+        />
+        <div className="absolute inset-0 bg-black/30" />
+      </div> */}
       <div className="relative z-10 text-center px-4 sm:px-6 md:px-8 max-w-4xl mx-auto">
         <motion.h1
           className="font-serif text-3xl sm:text-4xl md:text-6xl lg:text-7xl text-white mb-4 sm:mb-6"

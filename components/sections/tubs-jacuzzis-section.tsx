@@ -29,7 +29,7 @@ export default function TubsJacuzzisSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <Image
-              src="/tubs-preview.png"
+              src="/tubs/tubs-preview.png"
               alt="Luxury tubs and jacuzzis"
               fill
               className="object-cover"

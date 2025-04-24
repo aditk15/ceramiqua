@@ -29,7 +29,7 @@ export default function TilesSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <Image
-              src="/tiles-preview.png"
+              src="/tiles/tiles-preview.png"
               alt="Luxury tiles showcase"
               fill
               className="object-cover"

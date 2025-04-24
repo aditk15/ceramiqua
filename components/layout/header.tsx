@@ -41,7 +41,7 @@ export default function Header() {
         <div className="flex-1">
           <a href="/" className="inline-block">
             <Image
-              src="/mainlogo2.webp"
+              src="/logo/mainlogo.webp"
               alt="The Ceramiqua"
               width={200}
               height={80}

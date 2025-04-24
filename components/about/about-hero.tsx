@@ -8,7 +8,7 @@ export default function AboutHero() {
     <section className="relative h-[100vh] w-full overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/about-hero.webp"
+          src="/background/bg.webp"
           alt="About The Ceramiqua"
           fill
           priority
