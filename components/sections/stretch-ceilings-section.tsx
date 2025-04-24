@@ -50,7 +50,7 @@ export default function StretchCeilingsSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <Image
-              src="/ceilings-preview.webp"
+              src="/ceilings-preview.png"
               alt="Stretch ceilings showcase"
               fill
               className="object-cover"

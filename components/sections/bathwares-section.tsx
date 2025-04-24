@@ -50,7 +50,7 @@ export default function BathwaresSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <Image
-              src="/bathwares-preview.webp"
+              src="/bathwares-preview.png"
               alt="Premium bathwares"
               fill
               className="object-cover"
