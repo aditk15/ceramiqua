@@ -8,49 +8,46 @@ import Image from "next/image"
 
 const slides = [
   {
-    type: "video",
-    src: "/tiles-video.mp4",
-    alt: "Luxury tiles showcase",
-  },
-  {
-    type: "image",
-    src: "/tiles-1.webp",
+    src: "/tiles/tiles-1.png",
     alt: "Designer tiles collection",
   },
   {
-    type: "image",
-    src: "/tiles-2.webp",
+    src: "/tiles/tiles-2.png",
     alt: "Modern tile patterns",
   },
   {
-    type: "image",
-    src: "/tiles-3.webp",
+    src: "/tiles/tiles-3.png",
     alt: "Ceramic tile designs",
+  },
+  {
+    src: "/tiles/tiles-4.png",
+    alt: "Classic tile styles",
   },
 ]
 
 const categories = [
   {
-    title: "Porcelain & Ceramic",
-    description: "Durable and versatile tiles for floors and walls",
-    image: "/tiles-porcelain.webp",
+    title: "Extruded Porcelain Elegance",
+    description: "Unique textures and durable finishes ideal for feature walls and artistic spaces.",
+    image: "/tiles/tiles-extruded.png",
   },
   {
-    title: "Natural Stone",
-    description: "Timeless elegance from marble, granite, and travertine",
-    image: "/tiles-stone.webp",
+    title: "Italian Designer Tiles",
+    description: "Imported ceramic and porcelain tiles from Italy with exquisite surface treatments and patterns.",
+    image: "/tiles/tiles-italian.png",
   },
   {
-    title: "Mosaic & Decorative",
-    description: "Intricate patterns and artistic designs",
-    image: "/tiles-mosaic.webp",
+    title: "Spanish Signature Series",
+    description: "Premium wall tiles with decorative grooves and matte/gloss blends from Spain.",
+    image: "/tiles/tiles-spanish.png",
   },
   {
-    title: "Large Format",
-    description: "Expansive tiles for seamless, modern spaces",
-    image: "/tiles-large.webp",
+    title: "Contemporary Art & Decor",
+    description: "Artistic tiles featuring murals, 3D structures, and multi-tone finishes for accent walls.",
+    image: "/tiles/tiles-decorative.png",
   },
 ]
+
 
 export default function TilesContent() {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -75,14 +72,6 @@ export default function TilesContent() {
     return () => clearInterval(interval)
   }, [])
 
-  // Handle video playback when it becomes active
-  useEffect(() => {
-    if (slides[currentSlide].type === "video" && videoRef.current) {
-      videoRef.current.currentTime = 0
-      videoRef.current.play().catch((err) => console.error("Video play error:", err))
-    }
-  }, [currentSlide])
-
   return (
     <>
       <motion.section
@@ -103,23 +92,6 @@ export default function TilesContent() {
             >
               <div className="absolute inset-0 flex items-center justify-center">
                 <AnimatePresence mode="wait">
-                  {slides[currentSlide].type === "video" ? (
-                    <motion.video
-                      key={`video-${currentSlide}`}
-                      ref={videoRef}
-                      className="absolute inset-0 w-full h-full object-cover"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.5 }}
-                      muted
-                      playsInline
-                      loop
-                    >
-                      <source src={slides[currentSlide].src} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </motion.video>
-                  ) : (
                     <motion.div
                       key={`image-${currentSlide}`}
                       className="absolute inset-0"
@@ -136,7 +108,6 @@ export default function TilesContent() {
                         sizes="(max-width: 1024px) 100vw, 50vw"
                       />
                     </motion.div>
-                  )}
                 </AnimatePresence>
               </div>
 
@@ -181,32 +152,31 @@ export default function TilesContent() {
               <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light">Tiles</h2>
               <div className="w-20 h-1 bg-[#bfa77a]"></div>
               <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
-                Discover our exquisite collection of premium tiles, sourced from the finest manufacturers around the
-                world. From Italian porcelain to handcrafted ceramics, our selection combines timeless elegance with
-                contemporary design.
+                Discover our exclusive collection of imported tiles — sourced from Italy and Spain, and crafted with architectural elegance in mind. From textured porcelain to large-format wall solutions, every tile is a blend of design and durability.
               </p>
               <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
-                Each tile is carefully selected for its quality, durability, and aesthetic appeal, ensuring that your
-                spaces not only look beautiful but stand the test of time.
+                Whether you’re redefining luxury in a residential space or adding artistic identity to a commercial project, our tiles offer timeless expression with unmatched finish and strength.
               </p>
+
               <ul className="space-y-2 text-white/80">
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-[#bfa77a] rounded-full mr-3"></span>
-                  <span>Porcelain & Ceramic Tiles</span>
+                  <span>Extruded & Full-body Porcelain Options</span>
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-[#bfa77a] rounded-full mr-3"></span>
-                  <span>Natural Stone & Marble</span>
+                  <span>Imported Italian & Spanish Collections</span>
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-[#bfa77a] rounded-full mr-3"></span>
-                  <span>Mosaic & Decorative Patterns</span>
+                  <span>Matt, Gloss, and Textured Finishes</span>
                 </li>
                 <li className="flex items-center">
                   <span className="w-2 h-2 bg-[#bfa77a] rounded-full mr-3"></span>
-                  <span>Large Format & Slim Tiles</span>
+                  <span>Decorative Murals & 3D Wall Concepts</span>
                 </li>
               </ul>
+
             </motion.div>
           </div>
         </div>
@@ -215,9 +185,10 @@ export default function TilesContent() {
       <section className="py-16 sm:py-20 md:py-24 bg-[#f7f5f0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-16">
-            <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[#2c2c2c] mb-4">
-              Our Tile Categories
-            </h2>
+          <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light text-[#2c2c2c] mb-4">
+            Curated Tile Categories
+          </h2>
+
             <div className="w-20 h-1 bg-[#bfa77a] mx-auto mb-6"></div>
             <p className="max-w-3xl mx-auto text-lg text-[#444444]">
               Explore our diverse range of tile collections, each offering unique aesthetics and practical benefits for

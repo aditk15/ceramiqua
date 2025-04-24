@@ -8,7 +8,7 @@ export default function TilesHero() {
     <section className="relative h-[100vh] w-full overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/tiles/tiles-hero.png"
+          src="/tiles/tiles-hero.jpg"
           alt="Luxury Tiles Collection"
           fill
           priority
