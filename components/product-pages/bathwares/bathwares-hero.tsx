@@ -8,7 +8,7 @@ export default function BathwaresHero() {
     <section className="relative h-[100vh] w-full overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/bathwares-hero.webp"
+          src="/bathwares/bathwares-hero.jpg"
           alt="Premium Bathwares Collection"
           fill
           priority

@@ -7,24 +7,20 @@ import Image from "next/image"
 
 const slides = [
   {
-    type: "video",
-    src: "/bathwares-video.mp4",
-    alt: "Luxury bathwares showcase",
-  },
-  {
-    type: "image",
-    src: "/bathwares-1.webp",
+    src: "/bathwares/bathwares-1.png",
     alt: "Designer bathroom fixtures",
   },
   {
-    type: "image",
-    src: "/bathwares-2.webp",
+    src: "/bathwares/bathwares-2.png",
     alt: "Modern bathroom accessories",
   },
   {
-    type: "image",
-    src: "/bathwares-3.webp",
+    src: "/bathwares/bathwares-3.png",
     alt: "Premium bathroom collection",
+  },
+  {
+    src: "/bathwares/bathwares-4.png",
+    alt: "Luxury bathware",
   },
 ]
 
@@ -32,32 +28,32 @@ const categories = [
   {
     title: "Faucets & Taps",
     description: "Elegant designs with advanced functionality",
-    image: "/bathwares-faucets.webp",
+    image: "/bathwares/bathwares-faucets.png",
   },
   {
     title: "Sinks & Basins",
     description: "Statement pieces for your bathroom",
-    image: "/bathwares-sinks.webp",
+    image: "/bathwares/bathwares-sinks.png",
   },
   {
     title: "Shower Systems",
     description: "Immersive shower experiences",
-    image: "/bathwares-showers.webp",
+    image: "/bathwares/bathwares-showers.png",
   },
   {
     title: "Bathroom Accessories",
     description: "Finishing touches for a complete look",
-    image: "/bathwares-accessories.webp",
+    image: "/bathwares/bathwares-accessories.png",
   },
   {
     title: "Toilets & Bidets",
     description: "Modern designs with water-saving technology",
-    image: "/bathwares-toilets.webp",
+    image: "/bathwares/bathwares-toilets.png",
   },
   {
     title: "Vanities",
     description: "Stylish storage solutions",
-    image: "/bathwares-vanities.webp",
+    image: "/bathwares/bathwares-vanities.png",
   },
 ]
 
@@ -65,9 +61,7 @@ export default function BathwaresContent() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const sectionRef = useRef<HTMLElement>(null)
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 })
-  const videoRef = useRef<HTMLVideoElement>(null)
 
-  // Auto-advance slides
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
@@ -75,14 +69,6 @@ export default function BathwaresContent() {
 
     return () => clearInterval(interval)
   }, [])
-
-  // Handle video playback when it becomes active
-  useEffect(() => {
-    if (slides[currentSlide].type === "video" && videoRef.current) {
-      videoRef.current.currentTime = 0
-      videoRef.current.play().catch((err) => console.error("Video play error:", err))
-    }
-  }, [currentSlide])
 
   return (
     <>
@@ -129,23 +115,6 @@ export default function BathwaresContent() {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <AnimatePresence mode="wait">
-                {slides[currentSlide].type === "video" ? (
-                  <motion.video
-                    key={`video-${currentSlide}`}
-                    ref={videoRef}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
-                    muted
-                    playsInline
-                    loop
-                  >
-                    <source src={slides[currentSlide].src} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </motion.video>
-                ) : (
                   <motion.div
                     key={`image-${currentSlide}`}
                     className="absolute inset-0"
@@ -162,10 +131,8 @@ export default function BathwaresContent() {
                       sizes="(max-width: 768px) 100vw, 66vw"
                     />
                   </motion.div>
-                )}
               </AnimatePresence>
 
-              {/* Slide indicators */}
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-10 flex space-x-2">
                 {slides.map((_, index) => (
                   <button
@@ -180,7 +147,6 @@ export default function BathwaresContent() {
               </div>
             </motion.div>
 
-            {/* Features */}
             <motion.div
               className="space-y-6"
               initial={{ opacity: 0, x: 30 }}
