@@ -5,6 +5,7 @@ import Header from "@/components/layout/header"
 import { ThemeProvider } from "@/components/theme-provider"
 import localFont from "next/font/local"
 import Script from "next/script"
+import { Analytics } from '@vercel/analytics/next';
 
 export const viewport = {
   width: "device-width",
@@ -62,6 +63,7 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <Header />
           {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>
