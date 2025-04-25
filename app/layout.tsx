@@ -5,7 +5,6 @@ import Header from "@/components/layout/header"
 import { ThemeProvider } from "@/components/theme-provider"
 import localFont from "next/font/local"
 import Script from "next/script"
-import { Analytics } from '@vercel/analytics/next';
 
 export const viewport = {
   width: "device-width",
@@ -14,12 +13,23 @@ export const viewport = {
 }
 
 export const metadata: Metadata = {
-  title: "The Ceramiqua | Tiles & Bathwares",
-  description: "Tiles, Baths & Beyond",
+  title: "The Ceramiqua | Tiles, Bathwares & Beyond",
+  description:
+    "Premium tiles, luxury bathwares, tubs, jacuzzis and stretch ceilings for your dream spaces. Visit our showroom in Indore.",
   generator: "Adit Khandelwal",
+  keywords: ["tiles", "bathwares", "sanitarywares", "tubs", "jacuzzis", "stretch ceilings", "luxury", "Indore"],
+  openGraph: {
+    title: "The Ceramiqua | Tiles, Bathwares & Beyond",
+    description:
+      "Premium tiles, luxury bathwares, tubs, jacuzzis and stretch ceilings for your dream spaces. Visit our showroom in Indore.",
+    url: "https://theceramiqua.com",
+    siteName: "The Ceramiqua",
+    locale: "en_US",
+    type: "website",
+  },
   icons: {
-    icon: "/logo.ico",
-    apple: "/applelogo.png",
+    icon: "/logo/logo.ico",
+    apple: "/logo/applelogo.png",
   },
 }
 
@@ -42,11 +52,12 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+      <meta name="google-site-verification" content="GlhM0W_Naf34GvNR26nr6l0FC50BzFtW2aS3iJMzqPw" />
         <Script id="preload-bg" strategy="beforeInteractive">
           {`
             const link = document.createElement('link');
             link.rel = 'preload';
-            link.href = '/background/bg.webp';
+            link.href = '/bg.webp';
             link.as = 'image';
             document.head.appendChild(link);
           `}
@@ -63,7 +74,6 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <Header />
           {children}
-          <Analytics />
         </ThemeProvider>
       </body>
     </html>
