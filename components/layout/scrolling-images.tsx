@@ -7,16 +7,16 @@ interface ScrollingImagesProps {
 
 export default function ScrollingImages({
   upwardImages = [
-    "/sc1.webp?height=600&width=400",
-    "/sc2.webp?height=600&width=400",
-    "/sc3.webp?height=600&width=400",
-    "/sc4.webp?height=600&width=400",
+    "/scroll/1.png?height=600&width=400",
+    "/scroll/2.png?height=600&width=400",
+    "/scroll/3.png?height=600&width=400",
+    "/scroll/4.png?height=600&width=400",
   ],
   downwardImages = [
-    "/sc5.webp?height=600&width=400",
-    "/sc6.webp?height=600&width=400",
-    "/sc7.webp?height=600&width=400",
-    "/sc8.webp?height=600&width=400",
+    "/scroll/5.png?height=600&width=400",
+    "/scroll/6.png?height=600&width=400",
+    "/scroll/7.png?height=600&width=400",
+    "/scroll/8.png?height=600&width=400",
   ],
 }: ScrollingImagesProps) {
   return (
