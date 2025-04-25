@@ -34,7 +34,7 @@ export default function AboutContent() {
           >
             <div className="relative aspect-square overflow-hidden rounded-lg">
               <Image
-                src="/about-image-1.webp"
+                src="/about/about-1.jpg"
                 alt="The Ceramiqua showroom"
                 fill
                 className="object-cover"
@@ -97,7 +97,7 @@ export default function AboutContent() {
           >
             <div className="relative aspect-square overflow-hidden rounded-lg">
               <Image
-                src="/about-image-2.webp"
+                src="/about/about-2.jpg"
                 alt="The Ceramiqua products"
                 fill
                 className="object-cover"

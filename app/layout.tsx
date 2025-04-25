@@ -45,7 +45,7 @@ export default function RootLayout({
           {`
             const link = document.createElement('link');
             link.rel = 'preload';
-            link.href = '/bg.webp';
+            link.href = '/background/bg.webp';
             link.as = 'image';
             document.head.appendChild(link);
           `}
