@@ -6,12 +6,12 @@ import { useInView } from "framer-motion"
 import Image from "next/image"
 
 const galleryImages = [
-  "/placeholder.svg?height=600&width=800",
-  "/placeholder.svg?height=600&width=800",
-  "/placeholder.svg?height=600&width=800",
-  "/placeholder.svg?height=600&width=800",
-  "/placeholder.svg?height=600&width=800",
-  "/placeholder.svg?height=600&width=800",
+  "/gallery/gallery-1.jpg",
+  "/gallery/gallery-2.jpg",
+  "/gallery/gallery-3.jpg",
+  "/gallery/gallery-4.jpg",
+  "/gallery/gallery-5.jpg",
+  "/gallery/gallery-6.jpg",
 ]
 
 export default function Gallery() {

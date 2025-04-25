@@ -18,7 +18,7 @@ export default function Home() {
       <TubsJacuzzisSection />
       <StretchCeilingsSection />
       <DesignPhilosophy />
-      <Gallery />
+      {/* <Gallery /> */}
       <Contact />
     </main>
   )
