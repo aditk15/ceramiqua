@@ -70,16 +70,16 @@ const menuImageSets = {
   },
   ceilings: {
     upward: [
-      "/placeholder.svg?height=600&width=400",
-      "/placeholder.svg?height=600&width=400",
-      "/placeholder.svg?height=600&width=400",
-      "/placeholder.svg?height=600&width=400",
+      "/scroll/sc/sc1.webp?height=600&width=400",
+      "/scroll/sc/sc2.webp?height=600&width=400",
+      "/scroll/sc/sc3.webp?height=600&width=400",
+      "/scroll/sc/sc4.webp?height=600&width=400",
     ],
     downward: [
-      "/placeholder.svg?height=600&width=400",
-      "/placeholder.svg?height=600&width=400",
-      "/placeholder.svg?height=600&width=400",
-      "/placeholder.svg?height=600&width=400",
+      "/scroll/sc/sc5.webp?height=600&width=400",
+      "/scroll/sc/sc6.webp?height=600&width=400",
+      "/scroll/sc/sc7.webp?height=600&width=400",
+      "/scroll/sc/sc8.webp?height=600&width=400",
     ],
   },
   about: {
