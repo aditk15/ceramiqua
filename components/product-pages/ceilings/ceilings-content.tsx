@@ -7,24 +7,20 @@ import Image from "next/image"
 
 const slides = [
   {
-    type: "video",
-    src: "/ceilings-video.mp4",
-    alt: "Stretch ceilings showcase",
-  },
-  {
-    type: "image",
-    src: "/ceilings-1.webp",
+    src: "/ceilings/ceilings-1.jpg",
     alt: "Modern stretch ceiling",
   },
   {
-    type: "image",
-    src: "/ceilings-2.webp",
+    src: "/ceilings/ceilings-2.jpg",
     alt: "Illuminated stretch ceiling",
   },
   {
-    type: "image",
-    src: "/ceilings-3.webp",
+    src: "/ceilings/ceilings-3.jpg",
     alt: "Designer ceiling installation",
+  },
+  {
+    src: "/ceilings/ceilings-4.jpg",
+    alt: "Elegant stretch ceiling",
   },
 ]
 
@@ -57,7 +53,6 @@ export default function CeilingsContent() {
   const isInView = useInView(sectionRef, { once: true, amount: 0.3 })
   const videoRef = useRef<HTMLVideoElement>(null)
 
-  // Auto-advance slides
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1))
@@ -65,14 +60,6 @@ export default function CeilingsContent() {
 
     return () => clearInterval(interval)
   }, [])
-
-  // Handle video playback when it becomes active
-  useEffect(() => {
-    if (slides[currentSlide].type === "video" && videoRef.current) {
-      videoRef.current.currentTime = 0
-      videoRef.current.play().catch((err) => console.error("Video play error:", err))
-    }
-  }, [currentSlide])
 
   return (
     <>
@@ -108,23 +95,6 @@ export default function CeilingsContent() {
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               <AnimatePresence mode="wait">
-                {slides[currentSlide].type === "video" ? (
-                  <motion.video
-                    key={`video-${currentSlide}`}
-                    ref={videoRef}
-                    className="absolute inset-0 w-full h-full object-cover"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 0.5 }}
-                    muted
-                    playsInline
-                    loop
-                  >
-                    <source src={slides[currentSlide].src} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </motion.video>
-                ) : (
                   <motion.div
                     key={`image-${currentSlide}`}
                     className="absolute inset-0"
@@ -141,7 +111,6 @@ export default function CeilingsContent() {
                       sizes="(max-width: 1024px) 100vw, 58vw"
                     />
                   </motion.div>
-                )}
               </AnimatePresence>
 
               {/* Slide indicators */}
@@ -164,7 +133,6 @@ export default function CeilingsContent() {
 
       <section className="py-16 sm:py-20 md:py-24 bg-[#f7f5f0]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
-          {/* Features grid */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <motion.div
               className="bg-white p-8 rounded-lg shadow-md"
@@ -228,7 +196,8 @@ export default function CeilingsContent() {
                 Our team of certified professionals ensures flawless installation of your stretch ceiling. The process
                 is quick, clean, and minimally invasive, with most installations completed in just one day.
               </p>
-              <button className="mt-4 border border-[#2c2c2c] bg-transparent px-6 py-2 text-sm uppercase tracking-widest text-[#2c2c2c] transition-colors hover:bg-[#2c2c2c] hover:text-white">
+              <button className="mt-4 border border-[#2c2c2c] bg-transparent px-6 py-2 text-sm uppercase tracking-widest text-[#2c2c2c] transition-colors hover:bg-[#2c2c2c] hover:text-white" 
+              onClick={() => (window.location.href = "mailto:sandeep@theceramiqua.com?subject=Consultation Request for Stretch Ceilings")}>
                 Schedule Consultation
               </button>
             </motion.div>
@@ -236,7 +205,7 @@ export default function CeilingsContent() {
         </div>
       </section>
 
-      <section className="py-16 sm:py-20 md:py-24 bg-[#101010] text-white">
+      {/* <section className="py-16 sm:py-20 md:py-24 bg-[#101010] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
           <div className="text-center mb-16">
             <h2 className="font-serif text-3xl sm:text-4xl md:text-5xl font-light mb-4">Applications</h2>
@@ -274,7 +243,7 @@ export default function CeilingsContent() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
     </>
   )
 }

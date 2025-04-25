@@ -8,7 +8,7 @@ export default function CeilingsHero() {
     <section className="relative h-[100vh] w-full overflow-hidden">
       <div className="absolute inset-0">
         <Image
-          src="/ceilings-hero.webp"
+          src="/ceilings/ceilings-hero.jpeg"
           alt="Stretch Ceilings"
           fill
           priority

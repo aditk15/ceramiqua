@@ -25,7 +25,7 @@ export default function BathwaresHero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          Bathwares Collection
+          Bathwares
         </motion.h1>
         <motion.p
           className="mt-6 max-w-2xl text-lg font-light tracking-wide text-white/90 sm:text-xl"
