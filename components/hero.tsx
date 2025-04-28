@@ -28,7 +28,7 @@ export default function Hero() {
       <div className="absolute inset-0">
         {showVideo ? (
           <video
-            src="/background/bg.mov"
+            src="/background/bg.webm"
             autoPlay
             loop
             muted
@@ -36,16 +36,7 @@ export default function Hero() {
             className="object-cover object-center w-full h-full"
           />
         ) : (
-          <div className="absolute inset-0">
-             <Image
-              src="/background/bg.webp"
-              alt="The Ceramiqua background"
-              fill
-              priority
-              className="object-cover object-center"
-              sizes="100vw"
-            />
-        </div>         
+          <div className="object-cover object-center w-full h-full bg-black" />       
           )}
         <div className="absolute inset-0 bg-black/30" />
       </div>
