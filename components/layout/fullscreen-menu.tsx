@@ -194,7 +194,7 @@ export default function FullscreenMenu({ isOpen, onClose }: FullscreenMenuProps)
             >
               <Link
                 href={item.href}
-                className={`block font-serif text-4xl md:text-4xl transition-colors duration-300 ${
+                className={`block font-serif text-2xl md:text-4xl transition-colors duration-300 ${
                   activeMenuItem === item.id ? "text-[#c4a47a]" : "text-[#2c2c2c]"
                 } hover:text-[#c4a47a]`}
                 onClick={onClose}
