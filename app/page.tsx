@@ -5,7 +5,6 @@ import BathwaresSection from "@/components/sections/bathwares-section"
 import TubsJacuzzisSection from "@/components/sections/tubs-jacuzzis-section"
 import StretchCeilingsSection from "@/components/sections/stretch-ceilings-section"
 import DesignPhilosophy from "@/components/design-philosophy"
-import Gallery from "@/components/gallery"
 import Contact from "@/components/contact"
 import type { Metadata } from "next"
 
