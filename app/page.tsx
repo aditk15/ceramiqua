@@ -7,7 +7,7 @@ import StretchCeilingsSection from "@/components/sections/stretch-ceilings-secti
 import DesignPhilosophy from "@/components/design-philosophy"
 import Contact from "@/components/contact"
 import type { Metadata } from "next"
-
+//trial
 export const metadata: Metadata = {
   title: "The Ceramiqua | Tiles, Bathwares & Beyond",
   description: "Discover premium tiles, luxury bathwares, tubs, jacuzzis, and stretch ceilings for your dream spaces. Visit our showroom in Indore.",
